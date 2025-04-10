@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelpHub - Green Haven Initiative</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/charity-profile.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+    }
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      position: absolute;
+      left: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      text-decoration: none;
+    }
+    .auth-buttons {
+      position: absolute;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .auth-buttons button {
+      padding: 5px 10px;
+      border: 1px solid #000;
+      background: none;
+      cursor: pointer;
+    }
+    main {
+      padding: 20px;
+    }
+    .charity-details {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .donation-section {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    footer .logo {
+      text-align: left;
+    }
+    footer .social-links {
+      text-align: right;
+    }
+    footer .social-links a {
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+<body>
+  <header>
+    <div class="logo">HelpHub</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button onclick="location.href='signup.html'">Sign Up</button>
+      <button onclick="location.href='login.html'">Login</button>
+    </div>
+  </header>
+  <main>
+    <article class="charity-details">
+      <!--<h1>Green Haven Initiative</h1>-->
+      <img src="Images\GreenHavenInstituteBanner.jpg" alt="Green Haven Initiative banner" />
+      <p><em>Restoring nature, one tree at a time.</em></p>
+      <p>With your help, we're breathing new life into our planet! Our passionate team of environmentalists and volunteers works tirelessly to plant native trees, restore damaged ecosystems, and create thriving green spaces for both wildlife and communities to enjoy.</p>
+      <h2>Our Mission</h2>
+      <p>We're dedicated to healing our relationship with the natural world. Through community-driven reforestation projects, educational workshops, and sustainable practice advocacy, we're nurturing a healthier, greener planet for future generations. Every tree planted is a step toward a more sustainable tomorrow.</p>
+    </article>
+    
+    <aside class="donation-section">
+      <h2>Donate to Green Haven Initiative</h2>
+      <p>Support Green Haven Initiative by making a donation:</p>
+      <form action="#" method="post">
+        <label for="donor-name">Name:</label><br />
+        <input type="text" id="donor-name" name="name" placeholder="Your Name" /><br /><br />
+        <label for="donor-email">Email:</label><br />
+        <input type="email" id="donor-email" name="email" placeholder="Your Email" /><br /><br />
+        <label for="donation-amount">Amount:</label><br />
+        <input type="number" id="donation-amount" name="amount" placeholder="$" /><br /><br />
+        <button type="submit">Donate Now</button>
+      </form>
+    </aside>
+    
+    <section class="testimonials">
+      <h2>Environmental Impact Stories</h2>
+      
+      <div class="testimonial-item">
+        <img src="Images\DavidChen.jpg" alt="David Chen" class="testimonial-image" />
+        <div class="testimonial-content">
+          <p>"My students and I have planted over 300 trees with Green Haven. Watching the children connect with nature and take pride in their environmental stewardship has been one of the most rewarding experiences of my teaching career."</p>
+          <div class="testimonial-author">David Chen</div>
+          <div class="testimonial-role">Elementary School Teacher & Project Participant</div>
+        </div>
+      </div>
+      
+      <div class="testimonial-item">
+        <img src="Images\MartinezFamily.jpg" alt="The Martinez Family" class="testimonial-image" />
+        <div class="testimonial-content">
+          <p>"Our neighborhood was a concrete jungle until Green Haven helped us create a community garden. Now we have a beautiful green space where families gather, children play, and we grow fresh vegetables. It's transformed our community."</p>
+          <div class="testimonial-author">The Martinez Family</div>
+          <div class="testimonial-role">Community Garden Participants</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="logo">
+      <p>HelpHub</p>
+      <p>123 Charity Ave<br />Nonprofit City, NP 12345</p>
+    </div>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>

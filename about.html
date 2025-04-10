@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelpHub - About</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/about.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+    }
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      position: absolute;
+      left: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      text-decoration: none;
+    }
+    .auth-buttons {
+      position: absolute;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .auth-buttons button {
+      padding: 5px 10px;
+      border: 1px solid #000;
+      background: none;
+      cursor: pointer;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+    footer .logo {
+      text-align: left;
+    }
+    footer .social-links {
+      text-align: right;
+    }
+    footer .social-links a {
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">HelpHub</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button onclick="location.href='signup.html'">Sign Up</button>
+      <button onclick="location.href='login.html'">Login</button>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h1>About HelpHub</h1>
+      <p>HelpHub is dedicated to connecting donors with trusted charitable organizations worldwide.</p>
+      <p>Our mission is to make it easier for individuals to find ways to contribute to their communities and support causes they care about.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="logo">
+      <p>HelpHub</p>
+      <p>123 Charity Ave<br />Nonprofit City, NP 12345</p>
+    </div>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>

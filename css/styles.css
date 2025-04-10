@@ -1,0 +1,163 @@
+:root {
+  --primary-color: #4a7c59;
+  --secondary-color: #8eba9e;
+  --accent-color: #f2e3bc;
+  --text-color: #333;
+  --light-bg: #f9f9f9;
+  --dark-bg: #2c3e50;
+  --link-color: #3a6351;
+  --footer-bg: #f2f2f2;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.auth-buttons button {
+  padding: 8px 16px;
+  border: 2px solid var(--primary-color);
+  background: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.auth-buttons button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+auth-buttons button:last-child {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.auth-buttons button:last-child:hover {
+  background-color: #3a6351;
+  border-color: #3a6351;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: var(--footer-bg);
+  margin-top: 60px;
+  border-top: 1px solid #e0e0e0;
+}
+
+footer .logo {
+  text-align: left;
+}
+
+footer .logo p:first-child {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
+
+footer .social-links {
+  text-align: right;
+}
+
+footer .social-links a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+  color: var(--primary-color);
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Forms styling */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+  font-weight: 600;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #3a6351;
+}

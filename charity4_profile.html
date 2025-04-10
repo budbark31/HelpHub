@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelpHub - Healing Hands Aid</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/charity-profile.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">HelpHub</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button onclick="location.href='signup.html'">Sign Up</button>
+      <button onclick="location.href='login.html'">Login</button>
+    </div>
+  </header>
+  <main>
+    <article class="charity-details">
+      <!--<h1>Healing Hands Aid</h1>-->
+      <img src="Images\HealingHandsAidBanner.jpg" alt="Healing Hands Aid banner" />
+      <p><em>Healthcare for the underserved.</em></p>
+      <p>When emergency strikes, our dedicated medical professionals rush in with open hearts and skilled hands. From disaster zones to remote villages, we bring compassionate care to communities facing their darkest hours, offering not just medical treatment but also hope, dignity, and a path to recovery.</p>
+      <h2>Our Mission</h2>
+      <p>Healthcare is a human right, not a privilege. Our global family of doctors, nurses, and health workers is committed to breaking down barriers that prevent vulnerable populations from accessing quality medical care. With each person we treat, we reaffirm our belief in a world where everyone receives the care they deserve with compassion and respect.</p>
+    </article>
+    
+    <aside class="donation-section">
+      <h2>Donate to Healing Hands Aid</h2>
+      <p>Support Healing Hands Aid by making a donation:</p>
+      <form action="#" method="post">
+        <label for="donor-name">Name:</label><br />
+        <input type="text" id="donor-name" name="name" placeholder="Your Name" /><br /><br />
+        <label for="donor-email">Email:</label><br />
+        <input type="email" id="donor-email" name="email" placeholder="Your Email" /><br /><br />
+        <label for="donation-amount">Amount:</label><br />
+        <input type="number" id="donation-amount" name="amount" placeholder="$" /><br /><br />
+        <button type="submit">Donate Now</button>
+      </form>
+    </aside>
+    
+    <section class="testimonials">
+      <h2>Stories from the Field</h2>
+      
+      <div class="testimonial-item">
+        <img src="Images\DrAmar.jpg" alt="Dr. Amara Okafor" class="testimonial-image" />
+        <div class="testimonial-content">
+          <p>"I've worked with many medical organizations, but Healing Hands truly goes beyond treatment. We build relationships with communities, train local healthcare workers, and create sustainable systems that continue long after we leave."</p>
+          <div class="testimonial-author">Dr. Amara Okafor</div>
+          <div class="testimonial-role">Field Doctor, 7 Years with Healing Hands</div>
+        </div>
+      </div>
+      
+      <div class="testimonial-item">
+        <img src="Images\FamilyPhoto.jpg" alt="The Abasi Family" class="testimonial-image" />
+        <div class="testimonial-content">
+          <p>"When the earthquake destroyed our village's clinic, we lost hope. Healing Hands arrived within days with medical supplies, doctors, and hope. They didn't just treat our wounds—they stayed to rebuild our clinic and train our people."</p>
+          <div class="testimonial-author">The Abasi Family</div>
+          <div class="testimonial-role">Recipients of Emergency Medical Care</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="logo">
+      <p>HelpHub</p>
+      <p>123 Charity Ave<br />Nonprofit City, NP 12345</p>
+    </div>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>

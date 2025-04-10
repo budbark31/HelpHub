@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelpHub - Hope Kitchen Network</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/charity-profile.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">HelpHub</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button onclick="location.href='signup.html'">Sign Up</button>
+      <button onclick="location.href='login.html'">Login</button>
+    </div>
+  </header>
+  <main>
+    <article class="charity-details">
+      <!--<h1>Hope Kitchen Network</h1>-->
+      <img src="Images\HopeKitchenNetworkBanner.jpg" alt="Hope Kitchen Network banner" />
+      <p><em>Feeding communities in need.</em></p>
+      <p>More than just a meal! At Hope Kitchen Network, our wonderful volunteers serve up nourishing food with a side of compassion and dignity. Every day, we welcome people facing hunger into our warm, judgment-free spaces where they can enjoy freshly prepared meals and genuine community connection.</p>
+      <h2>Our Mission</h2>
+      <p>We believe that no one should face hunger alone. By bringing together caring individuals, local farmers, and community partners, we're creating a network of support that nourishes both body and spirit. Together, we're building stronger, more resilient neighborhoods where everyone has a place at the table.</p>
+    </article>
+    
+    <aside class="donation-section">
+      <h2>Donate to Hope Kitchen Network</h2>
+      <p>Support Hope Kitchen Network by making a donation:</p>
+      <form action="#" method="post">
+        <label for="donor-name">Name:</label><br />
+        <input type="text" id="donor-name" name="name" placeholder="Your Name" /><br /><br />
+        <label for="donor-email">Email:</label><br />
+        <input type="email" id="donor-email" name="email" placeholder="Your Email" /><br /><br />
+        <label for="donation-amount">Amount:</label><br />
+        <input type="number" id="donation-amount" name="amount" placeholder="$" /><br /><br />
+        <button type="submit">Donate Now</button>
+      </form>
+    </aside>
+    
+    <section class="testimonials">
+      <h2>Community Voices</h2>
+      
+      <div class="testimonial-item">
+        <img src="Images\RobertJackson.jpg" alt="Robert Jackson" class="testimonial-image" />
+        <div class="testimonial-content">
+          <p>"When I lost my job, Hope Kitchen was there not just with hot meals, but with respect and kindness. They treated me like a person, not a statistic. Now I'm back on my feet and volunteer twice a week to help others who are where I once was."</p>
+          <div class="testimonial-author">Robert Jackson</div>
+          <div class="testimonial-role">Former Guest, Current Volunteer</div>
+        </div>
+      </div>
+      
+      <div class="testimonial-item">
+        <img src="Images\SarahAndOlivia.jpg" alt="Sarah & Olivia Kim" class="testimonial-image" />
+        <div class="testimonial-content">
+          <p>"My daughter and I started volunteering at Hope Kitchen to teach her about giving back. What we didn't expect was how much we would receive in return—the sense of community, the friendships, and the perspective on what really matters in life."</p>
+          <div class="testimonial-author">Sarah & Olivia Kim</div>
+          <div class="testimonial-role">Mother-Daughter Volunteer Team</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="logo">
+      <p>HelpHub</p>
+      <p>123 Charity Ave<br />Nonprofit City, NP 12345</p>
+    </div>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>

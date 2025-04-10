@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelpHub - Unity Homes Project</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/charity-profile.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">HelpHub</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button onclick="location.href='signup.html'">Sign Up</button>
+      <button onclick="location.href='login.html'">Login</button>
+    </div>
+  </header>
+  <main>
+    <article class="charity-details">
+      <!--<h1>Unity Homes Project</h1>-->
+      <img src="Images\UnityHomesBanner.jpg" alt="Unity Homes Project banner" />
+      <p><em>Building shelter, rebuilding lives.</em></p>
+      <p>Home is where life begins! Through the joyful energy of our volunteers and the grateful partnership of families in need, we're creating more than just walls and roofs—we're building foundations for dreams to grow. Each home we construct brings stability, safety, and renewed hope to families taking their first steps toward a brighter future.</p>
+      <h2>Our Mission</h2>
+      <p>We believe everyone deserves a place to call home. By bringing together communities to build affordable housing, we create environments where families can thrive, children can grow in safety, and neighborhoods can strengthen their bonds. Every nail hammered, every wall raised is an investment in human potential and community resilience.</p>
+    </article>
+    
+    <aside class="donation-section">
+      <h2>Donate to Unity Homes Project</h2>
+      <p>Support Unity Homes Project by making a donation:</p>
+      <form action="#" method="post">
+        <label for="donor-name">Name:</label><br />
+        <input type="text" id="donor-name" name="name" placeholder="Your Name" /><br /><br />
+        <label for="donor-email">Email:</label><br />
+        <input type="email" id="donor-email" name="email" placeholder="Your Email" /><br /><br />
+        <label for="donation-amount">Amount:</label><br />
+        <input type="number" id="donation-amount" name="amount" placeholder="$" /><br /><br />
+        <button type="submit">Donate Now</button>
+      </form>
+    </aside>
+    
+    <section class="testimonials">
+      <h2>Family Stories</h2>
+      
+      <div class="testimonial-item">
+        <img src="Images\JohnsonFamily.jpg" alt="The Johnson Family" class="testimonial-image" />
+        <div class="testimonial-content">
+          <p>"After years of moving from apartment to apartment, our children finally have a stable place to call home. They have their own rooms, a yard to play in, and most importantly, security. We're building a future now, not just surviving day to day."</p>
+          <div class="testimonial-author">The Johnson Family</div>
+          <div class="testimonial-role">Homeowners since 2021</div>
+        </div>
+      </div>
+      
+      <div class="testimonial-item">
+        <img src="Images\MiguelSanchez.jpg" alt="Miguel Sanchez" class="testimonial-image" />
+        <div class="testimonial-content">
+          <p>"I've been a construction volunteer with Unity Homes for over a decade. There's nothing like the feeling of handing keys to a family who never thought they'd own a home. Those tears of joy make every blister and sore muscle worth it."</p>
+          <div class="testimonial-author">Miguel Sanchez</div>
+          <div class="testimonial-role">Long-time Construction Volunteer</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="logo">
+      <p>HelpHub</p>
+      <p>123 Charity Ave<br />Nonprofit City, NP 12345</p>
+    </div>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>

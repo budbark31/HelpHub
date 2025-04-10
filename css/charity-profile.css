@@ -1,0 +1,246 @@
+header {
+  position: relative;
+  justify-content: center;
+}
+
+header .logo {
+  position: absolute;
+  left: 40px;
+  z-index: 1;
+}
+
+.auth-buttons {
+  position: absolute;
+  right: 40px;
+}
+
+main {
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+main::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.charity-details {
+  max-width: 800px;
+  margin: 0;
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  flex: 3;
+  min-width: 300px;
+}
+
+.charity-details h1 {
+  color: var(--primary-color);
+  font-size: 2.4em;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.charity-details em {
+  display: block;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.charity-details img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.charity-details p {
+  color: #444;
+  line-height: 1.7;
+  font-size: 1.1em;
+}
+
+.charity-details h2 {
+  color: var(--primary-color);
+  margin-top: 30px;
+}
+
+.donation-section {
+  max-width: 400px;
+  margin: 0;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  flex: 1;
+  min-width: 250px;
+  align-self: flex-start;
+  position: relative;
+  top: auto;
+}
+
+.donation-section h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 0;
+}
+
+.donation-section p {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* Testimonials Section */
+.testimonials {
+  margin-top: 40px;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  flex-basis: 100%;
+  clear: both;
+}
+
+.testimonials h2 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.testimonial-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.testimonial-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+  flex: 1;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 3px;
+}
+
+.testimonial-role {
+  font-size: 0.9em;
+  color: #666;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    flex-direction: column;
+  }
+  
+  .charity-details, .donation-section {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header .logo,
+  .auth-buttons {
+    position: static;
+    margin: 10px 0;
+  }
+  
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  nav {
+    margin: 15px 0;
+  }
+  
+  .testimonial-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .testimonial-image {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+/* Special footer styling for charities_profile.html */
+.footer-col {
+  width: 22%;
+  padding: 0 15px;
+}
+
+.footer-col h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a, .footer-col a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover, .footer-col a:hover {
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-col {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .footer-col:last-child {
+    margin-bottom: 0;
+  }
+}
