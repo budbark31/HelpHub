@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/charity-profile.css">
   <script src="js/auth.js" defer></script>
+  <script src="js/charity-forms.js" defer></script>
 </head>
 <body>
   <header>
@@ -34,17 +35,51 @@
     </article>
     
     <aside class="donation-section">
-      <h2>Donate to Hope Kitchen Network</h2>
-      <p>Support Hope Kitchen Network by making a donation:</p>
-      <form action="#" method="post">
-        <label for="donor-name">Name:</label><br />
-        <input type="text" id="donor-name" name="name" placeholder="Your Name" /><br /><br />
-        <label for="donor-email">Email:</label><br />
-        <input type="email" id="donor-email" name="email" placeholder="Your Email" /><br /><br />
-        <label for="donation-amount">Amount:</label><br />
-        <input type="number" id="donation-amount" name="amount" placeholder="$" /><br /><br />
-        <button type="submit">Donate Now</button>
-      </form>
+      <div class="forms-container">
+        <div class="form-tabs">
+          <button class="form-tab active" data-tab="donate-form">Donate</button>
+          <button class="form-tab" data-tab="volunteer-form">Volunteer</button>
+        </div>
+        
+        <div id="donate-form" class="form-content active">
+          <h2>Donate to Hope Kitchen Network</h2>
+          <p>Support Hope Kitchen Network by making a donation:</p>
+          <form action="#" method="post">
+            <label for="donor-name">Name:</label><br />
+            <input type="text" id="donor-name" name="name" placeholder="Your Name" /><br /><br />
+            <label for="donor-email">Email:</label><br />
+            <input type="email" id="donor-email" name="email" placeholder="Your Email" /><br /><br />
+            <label for="donation-amount">Amount:</label><br />
+            <input type="number" id="donation-amount" name="amount" placeholder="$" /><br /><br />
+            <button type="submit">Donate Now</button>
+          </form>
+        </div>
+        
+        <div id="volunteer-form" class="form-content">
+          <h2>Volunteer with Hope Kitchen Network</h2>
+          <p>Join our team of community meal providers:</p>
+          <form action="#" method="post">
+            <label for="volunteer-name">Name:</label><br />
+            <input type="text" id="volunteer-name" name="name" placeholder="Your Name" /><br /><br />
+            <label for="volunteer-email">Email:</label><br />
+            <input type="email" id="volunteer-email" name="email" placeholder="Your Email" /><br /><br />
+            <label for="volunteer-phone">Phone:</label><br />
+            <input type="tel" id="volunteer-phone" name="phone" placeholder="Your Phone Number" /><br /><br />
+            <label for="volunteer-interest">Area of Interest:</label><br />
+            <select id="volunteer-interest" name="interest">
+              <option value="">Select an option</option>
+              <option value="meal-prep">Meal Preparation</option>
+              <option value="serving">Food Service</option>
+              <option value="delivery">Meal Delivery</option>
+              <option value="pantry">Food Pantry Assistant</option>
+              <option value="admin">Administrative Support</option>
+            </select><br /><br />
+            <label for="volunteer-availability">Availability:</label><br />
+            <textarea id="volunteer-availability" name="availability" placeholder="Please indicate your general availability (weekdays, evenings, weekends)" rows="3"></textarea><br /><br />
+            <button type="submit">Submit Application</button>
+          </form>
+        </div>
+      </div>
     </aside>
     
     <section class="testimonials">

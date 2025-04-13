@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HelpHub - Charity 1</title>
+  <title>HelpHub - Bright Futures Fund</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/charity-profile.css">
   <script src="js/auth.js" defer></script>
+  <script src="js/charity-forms.js" defer></script>
 </head>
 <body>
   <header>
@@ -34,17 +35,51 @@
     </article>
     
     <aside class="donation-section">
-      <h2>Donate to the Bright Futures Fund</h2>
-      <p>Support the Bright Futures Fund by making a donation:</p>
-      <form action="#" method="post">
-        <label for="donor-name">Name:</label><br />
-        <input type="text" id="donor-name" name="name" placeholder="Your Name" /><br /><br />
-        <label for="donor-email">Email:</label><br />
-        <input type="email" id="donor-email" name="email" placeholder="Your Email" /><br /><br />
-        <label for="donation-amount">Amount:</label><br />
-        <input type="number" id="donation-amount" name="amount" placeholder="$" /><br /><br />
-        <button type="submit">Donate Now</button>
-      </form>
+      <div class="forms-container">
+        <div class="form-tabs">
+          <button class="form-tab active" data-tab="donate-form">Donate</button>
+          <button class="form-tab" data-tab="volunteer-form">Volunteer</button>
+        </div>
+        
+        <div id="donate-form" class="form-content active">
+          <h2>Donate to the Bright Futures Fund</h2>
+          <p>Support the Bright Futures Fund by making a donation:</p>
+          <form action="#" method="post">
+            <label for="donor-name">Name:</label><br />
+            <input type="text" id="donor-name" name="name" placeholder="Your Name" /><br /><br />
+            <label for="donor-email">Email:</label><br />
+            <input type="email" id="donor-email" name="email" placeholder="Your Email" /><br /><br />
+            <label for="donation-amount">Amount:</label><br />
+            <input type="number" id="donation-amount" name="amount" placeholder="$" /><br /><br />
+            <button type="submit">Donate Now</button>
+          </form>
+        </div>
+        
+        <div id="volunteer-form" class="form-content">
+          <h2>Volunteer with Bright Futures Fund</h2>
+          <p>Join our team of dedicated volunteers making a difference:</p>
+          <form action="#" method="post">
+            <label for="volunteer-name">Name:</label><br />
+            <input type="text" id="volunteer-name" name="name" placeholder="Your Name" /><br /><br />
+            <label for="volunteer-email">Email:</label><br />
+            <input type="email" id="volunteer-email" name="email" placeholder="Your Email" /><br /><br />
+            <label for="volunteer-phone">Phone:</label><br />
+            <input type="tel" id="volunteer-phone" name="phone" placeholder="Your Phone Number" /><br /><br />
+            <label for="volunteer-interest">Area of Interest:</label><br />
+            <select id="volunteer-interest" name="interest">
+              <option value="">Select an option</option>
+              <option value="tutoring">Tutoring</option>
+              <option value="mentoring">Mentoring</option>
+              <option value="events">Special Events</option>
+              <option value="admin">Administrative Support</option>
+              <option value="fundraising">Fundraising</option>
+            </select><br /><br />
+            <label for="volunteer-availability">Availability:</label><br />
+            <textarea id="volunteer-availability" name="availability" placeholder="Please indicate your general availability (weekdays, evenings, weekends)" rows="3"></textarea><br /><br />
+            <button type="submit">Submit Application</button>
+          </form>
+        </div>
+      </div>
     </aside>
     
     <section class="testimonials">
