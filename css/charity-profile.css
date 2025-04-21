@@ -289,3 +289,56 @@ main::after {
     margin-bottom: 0;
   }
 }
+
+#card-modal input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 1em;
+}
+
+#card-modal label {
+  font-weight: 600;
+  margin-bottom: 2px;
+  display: block;
+}
+
+#card-modal button[type="submit"] {
+  background: var(--primary-color, #4a7c59);
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+#card-modal button[type="submit"]:hover {
+  background: #3a6351;
+}
+
+.review-btn {
+  background: var(--primary-color, #4a7c59);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin: 18px 0 0 0;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.08);
+  outline: none;
+  display: inline-block;
+}
+.review-btn:hover, .review-btn:focus {
+  background: #3a6351;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.15);
+  outline: 2px solid #3a6351;
+}

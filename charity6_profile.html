@@ -29,6 +29,12 @@
       <h1>Creative Minds Collective</h1>
       <p><em>Arts for all.</em></p>
       <img src="Images\CreativeMindsBanner.jpg" alt="Creative Minds Collective banner" />
+      <div class="charity-info" style="margin: 0 auto 20px auto; display: inline-block;">
+        <strong>Founded:</strong> 2017<br>
+        <strong>Students Reached:</strong> 8,500+<br>
+        <strong>Location:</strong> Nationwide<br>
+        <strong>Focus:</strong> Arts, Youth Empowerment
+      </div>
       <p>Imagine the smile on a child's face as they discover the joy of creation! Our passionate teaching artists bring color, music, and imagination to underserved schools and community centers, creating safe spaces where young people can express themselves freely, discover hidden talents, and build lasting confidence through artistic exploration.</p>
       <h2>Our Mission</h2>
       <p>We believe creativity is a birthright that should be accessible to everyone. Through our heartfelt programs, we invite young people to explore their artistic voices, celebrate cultural heritage, and envision new possibilities for themselves and their communities. When we nurture creative expression in youth, we're cultivating the problem-solvers, innovators, and visionaries of tomorrow.</p>
@@ -105,6 +111,31 @@
         </div>
       </div>
     </section>
+    <!-- Reviews Modal and Button -->
+    <div style="text-align:center;margin:30px 0;">
+      <button class="review-btn" data-charity="creativeminds" aria-label="Read and write reviews for Creative Minds Collective" tabindex="0">Reviews</button>
+    </div>
+    <div id="reviews-modal" role="dialog" aria-modal="true" aria-labelledby="reviews-modal-title" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;z-index:9999;">
+      <div style="background:#fff;max-width:420px;width:95%;padding:24px 18px 18px 18px;border-radius:8px;position:relative;">
+        <button id="close-reviews-modal" aria-label="Close reviews dialog" style="position:absolute;top:10px;right:10px;background:none;border:none;font-size:1.5em;cursor:pointer;">&times;</button>
+        <h2 id="reviews-modal-title" style="margin-top:0;">Charity Reviews</h2>
+        <div id="reviews-list" style="max-height:220px;overflow-y:auto;margin-bottom:12px;"></div>
+        <form id="review-form" autocomplete="off">
+          <label for="review-rating">Your Rating:</label>
+          <select id="review-rating" required aria-label="Rating">
+            <option value="">Select</option>
+            <option value="5">★★★★★</option>
+            <option value="4">★★★★☆</option>
+            <option value="3">★★★☆☆</option>
+            <option value="2">★★☆☆☆</option>
+            <option value="1">★☆☆☆☆</option>
+          </select>
+          <label for="review-text">Your Review:</label>
+          <textarea id="review-text" rows="2" maxlength="300" required aria-label="Write your review"></textarea>
+          <button type="submit" style="margin-top:8px;">Submit Review</button>
+        </form>
+      </div>
+    </div>
   </main>
   <footer>
     <div class="logo">
@@ -118,5 +149,6 @@
       <a href="#">LinkedIn</a>
     </div>
   </footer>
+  <script src="js/charities.js"></script>
 </body>
 </html>
