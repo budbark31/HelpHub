@@ -28,9 +28,9 @@
     <section class="hero" aria-labelledby="explore-charities-heading">
       <h1 id="explore-charities-heading">Explore Charities</h1>
       <p>Discover organizations making a difference in your community and beyond.</p>
-      <form id="charity-search-form" role="search" aria-label="Charity search and filter" style="display:flex;flex-wrap:nowrap;gap:0;justify-content:center;margin:20px 0;">
-        <input type="text" id="charity-search" placeholder="Find a charity" aria-label="Search charities by name or description" style="padding: 10px; width: 220px; max-width: 90%; border-top-right-radius:0;border-bottom-right-radius:0;" />
-        <select id="filter-cause" aria-label="Filter by cause" style="padding:7px 8px;width:110px;font-size:0.98em;border-radius:0;border-left:0;border-right:0;">
+      <form id="charity-search-form" role="search" aria-label="Charity search and filter">
+        <input type="text" id="charity-search" placeholder="Find a charity" aria-label="Search charities by name or description" />
+        <select id="filter-cause" aria-label="Filter by cause">
           <option value="">All Causes</option>
           <option value="Education">Education</option>
           <option value="Environment">Environment</option>
@@ -42,7 +42,7 @@
           <option value="Youth Empowerment">Youth Empowerment</option>
           <!-- Add more as needed -->
         </select>
-        <select id="filter-location" aria-label="Filter by location" style="padding:7px 8px;width:110px;font-size:0.98em;border-top-left-radius:0;border-bottom-left-radius:0;">
+        <select id="filter-location" aria-label="Filter by location">
           <option value="">All Locations</option>
           <option value="Nationwide">Nationwide</option>
           <option value="Midwest">Midwest</option>
@@ -197,6 +197,139 @@
     }
     updateStats();
     setInterval(updateStats, 4000);
+
+    // ProPublica Non-profit Explorer API integration (minimal, user-friendly)
+    (function() {
+      const gridSection = document.querySelector('.charity-grid');
+      if (!gridSection) return;
+      let propublicaSection = document.getElementById('propublica-nonprofits');
+      if (!propublicaSection) {
+        propublicaSection = document.createElement('section');
+        propublicaSection.id = 'propublica-nonprofits';
+        propublicaSection.style.margin = "40px auto 0 auto";
+        propublicaSection.style.maxWidth = "1100px";
+        propublicaSection.innerHTML = `
+          <h2 style="color:#4a7c59;text-align:center;margin-bottom:18px;">Search U.S. Nonprofits</h2>
+          <form id="propublica-search-form" style="display:flex;justify-content:center;gap:0 10px;margin-bottom:18px;">
+            <input type="text" id="propublica-search" placeholder="Search by name, keyword, or EIN" style="padding:10px;width:260px;max-width:90%;border-radius:4px 0 0 4px;border:1px solid #ddd;font-size:1em;">
+            <button type="submit" style="padding:10px 18px;background:#4a7c59;color:#fff;border:none;border-radius:0 4px 4px 0;font-weight:600;cursor:pointer;">Search</button>
+          </form>
+          <div id="propublica-results" style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;"></div>
+        `;
+        gridSection.parentNode.insertBefore(propublicaSection, gridSection.nextSibling);
+      }
+
+      const form = document.getElementById('propublica-search-form');
+      const input = document.getElementById('propublica-search');
+      const results = document.getElementById('propublica-results');
+
+      // Helper: Format currency
+      function formatCurrency(num) {
+        if (!num || isNaN(num)) return 'N/A';
+        return '$' + Number(num).toLocaleString();
+      }
+      // Helper: Format percent
+      function formatPercent(num) {
+        if (!num || isNaN(num)) return 'N/A';
+        return Number(num).toFixed(1) + '%';
+      }
+      // Helper: NTEE code to description (partial, fallback to code)
+      function nteeDesc(code) {
+        const map = {
+          'B': 'Education', 'C': 'Environment', 'D': 'Animal', 'E': 'Health', 'F': 'Mental Health',
+          'G': 'Diseases', 'H': 'Medical Research', 'I': 'Crime', 'J': 'Employment', 'K': 'Food',
+          'L': 'Housing', 'M': 'Public Safety', 'N': 'Recreation', 'O': 'Youth', 'P': 'Human Services',
+          'Q': 'International', 'R': 'Civil Rights', 'S': 'Community', 'T': 'Philanthropy',
+          'U': 'Science', 'V': 'Social Science', 'W': 'Public Benefit', 'X': 'Religion', 'Y': 'Mutual/Membership', 'Z': 'Unknown'
+        };
+        if (!code) return '';
+        const letter = code[0];
+        return map[letter] ? map[letter] + ' (' + code + ')' : code;
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const query = (input.value || '').trim();
+        if (!query) return;
+        results.innerHTML = '<div style="color:#888;text-align:center;width:100%;">Searching nonprofits...</div>';
+        // Use AllOrigins proxy to bypass CORS
+        const propublicaUrl = `https://projects.propublica.org/nonprofits/api/v2/search.json?q=${encodeURIComponent(query)}`;
+        const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(propublicaUrl)}`;
+        fetch(allOriginsUrl)
+          .then(res => res.ok ? res.json() : Promise.reject())
+          .then(data => {
+            let orgs = [];
+            try {
+              const parsed = JSON.parse(data.contents);
+              orgs = (parsed && parsed.organizations) || [];
+            } catch (err) {
+              results.innerHTML = '<div style="color:#d32f2f;text-align:center;width:100%;">Unable to parse nonprofit data.</div>';
+              return;
+            }
+            if (!orgs.length) {
+              results.innerHTML = '<div style="color:#888;text-align:center;width:100%;">No nonprofits found for your search.</div>';
+              return;
+            }
+            results.innerHTML = '';
+            orgs.slice(0, 6).forEach(org => {
+              const ein = org.ein || '';
+              const name = org.name || '';
+              const city = org.city || '';
+              const state = org.state || '';
+              const ntee = org.ntee_code || '';
+              const subsection = org.subsection_code || '';
+              const ruling = org.ruling_year || '';
+              const profileUrl = `https://projects.propublica.org/nonprofits/organizations/${ein}`;
+              // Program Expense % and Revenue (from latest990)
+              let progPct = null, revenue = null;
+              if (org.latest990) {
+                progPct = org.latest990.pct_program || null;
+                revenue = org.latest990.total_revenue || null;
+              }
+              // IRS Status badge
+              const irsBadge = subsection
+                ? `<span style="display:inline-block;background:#e6f4ea;color:#256029;font-weight:600;padding:2px 8px;border-radius:12px;font-size:0.93em;margin-left:4px;">501(c)${subsection}</span>`
+                : '';
+              // Cause badge
+              const causeBadge = ntee
+                ? `<span style="display:inline-block;background:#f2e3bc;color:#4a7c59;font-weight:600;padding:2px 8px;border-radius:12px;font-size:0.93em;margin-left:4px;">${nteeDesc(ntee)}</span>`
+                : '';
+              // Program Expense badge
+              const progBadge = progPct !== null
+                ? `<span style="display:inline-block;background:#d9f9e6;color:#256029;font-weight:600;padding:2px 8px;border-radius:12px;font-size:0.93em;margin-left:4px;">Program: ${formatPercent(progPct)}</span>`
+                : '';
+              // Revenue badge
+              const revBadge = revenue !== null
+                ? `<span style="display:inline-block;background:#e3eafc;color:#1a237e;font-weight:600;padding:2px 8px;border-radius:12px;font-size:0.93em;margin-left:4px;">Revenue: ${formatCurrency(revenue)}</span>`
+                : '';
+              // Card HTML
+              const card = document.createElement('div');
+              card.style.cssText = 'background:#fff;border:1px solid #e0e0e0;border-radius:8px;box-shadow:0 2px 8px rgba(76,175,80,0.07);padding:16px 14px;width:290px;min-height:120px;display:flex;flex-direction:column;justify-content:space-between;';
+              card.innerHTML = `
+                <div>
+                  <div style="font-size:1.08em;font-weight:700;margin-bottom:4px;color:#3a6351;">
+                    ${name}
+                    <span style="font-size:0.97em;font-weight:400;color:#555;margin-left:6px;">${city}${state ? ', ' + state : ''}</span>
+                  </div>
+                  <div style="margin:8px 0 8px 0;">
+                    ${causeBadge}
+                    ${progBadge}
+                    ${revBadge}
+                    ${irsBadge}
+                  </div>
+                  <div style="color:#888;font-size:0.96em;">EIN: ${ein}</div>
+                  <div style="color:#888;font-size:0.96em;">Ruling Year: ${ruling || 'N/A'}</div>
+                </div>
+                <a href="${profileUrl}" target="_blank" rel="noopener" style="margin-top:12px;display:inline-block;background:#4a7c59;color:#fff;padding:7px 14px;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.98em;">View Full Profile</a>
+              `;
+              results.appendChild(card);
+            });
+          })
+          .catch(() => {
+            results.innerHTML = '<div style="color:#d32f2f;text-align:center;width:100%;">Unable to load nonprofit data at this time. Please try again later.</div>';
+          });
+      });
+    })();
   </script>
 </body>
 </html>
